@@ -1,7 +1,7 @@
-# Личный проект «{{projectTitle}}»
+# Личный проект «{{six-cities}}»
 
-* Студент: [{{userName}}]({{userProfile}}).
-* Наставник: `Неизвестно`.
+* Студент: [{{Kirill Savchenko}}]({{Genrih}}).
+* Наставник: `Alina Filippenko`.
 
 ---
 
