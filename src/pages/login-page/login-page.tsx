@@ -1,6 +1,11 @@
-function LoginScreen() {
+import { Helmet } from 'react-helmet-async';
+
+function LoginPage(): React.JSX.Element {
   return (
     <div className="page page--gray page--login">
+      <Helmet>
+        <title>6 cities: authorization</title>
+      </Helmet>
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
@@ -42,4 +47,4 @@ function LoginScreen() {
   );
 }
 
-export default LoginScreen;
+export default LoginPage;

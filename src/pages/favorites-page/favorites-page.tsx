@@ -1,6 +1,11 @@
-function FavoritesScreen() {
+import { Helmet } from 'react-helmet-async';
+
+function FavoritesPage(): React.JSX.Element {
   return (
     <div className="page">
+      <Helmet>
+        <title>6 cities: favorites</title>
+      </Helmet>
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
@@ -168,4 +173,4 @@ function FavoritesScreen() {
   );
 }
 
-export default FavoritesScreen;
+export default FavoritesPage;

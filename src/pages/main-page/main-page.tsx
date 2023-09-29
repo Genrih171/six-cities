@@ -1,12 +1,16 @@
 import PlaceCard from '../../components/place-card/place-card';
+import { Helmet } from 'react-helmet-async';
 
 type MainScreenProps = {
   amountPlaces: number;
 };
 
-function MainScreen({amountPlaces}: MainScreenProps): JSX.Element {
+function MainPage({amountPlaces}: MainScreenProps): React.JSX.Element {
   return (
     <div className="page page--gray page--main">
+      <Helmet>
+        <title>6 cities</title>
+      </Helmet>
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
@@ -112,4 +116,4 @@ function MainScreen({amountPlaces}: MainScreenProps): JSX.Element {
   );
 }
 
-export default MainScreen;
+export default MainPage;
