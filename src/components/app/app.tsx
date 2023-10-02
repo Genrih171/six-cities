@@ -24,7 +24,7 @@ function App({amountPlaces}: AppScreenProps): React.JSX.Element {
           <Route path={AppRoutes.ROOT}>
             <Route index element={<MainPage amountPlaces={amountPlaces}/>}/>
             <Route path={AppRoutes.LOGIN} element={<LoginPage/>}/>
-            <Route path={AppRoutes.OFFER} element={<OfferPage/>}/>
+            <Route path={`${AppRoutes.OFFER}/:offerId`} element={<OfferPage/>}/>
             <Route
               path={AppRoutes.FAVORITES}
               element={
