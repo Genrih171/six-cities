@@ -1,17 +1,23 @@
 type PlaceCardProps = {
+  id: string;
   title: string;
   type: string;
   price: number;
   previewImage: string;
   isFavorite: boolean;
   isPremium: boolean;
+  handleMouseOver: (offerId: string) => void;
 }
 
 function PlaceCard(props: PlaceCardProps): React.JSX.Element {
-  const {title, type, price, previewImage, isPremium, isFavorite} = props;
+  const {id, title, type, price, previewImage, isPremium, isFavorite, handleMouseOver} = props;
+
+  const mouseOverHandler = () => {
+    handleMouseOver(id);
+  };
 
   return (
-    <article className="cities__card place-card">
+    <article className="cities__card place-card" onMouseOver={mouseOverHandler}>
 
       {isPremium &&
       <div className="place-card__mark">

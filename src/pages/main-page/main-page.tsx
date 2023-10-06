@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 
 import Header from '../../components/header/header';
-import PlaceCard from '../../components/place-card/place-card';
+import PlaceCardList from '../../components/place-card-list/place-card-list';
+
 import { TOffers } from '../../types/offer';
 
 type MainScreenProps = {
@@ -76,11 +77,7 @@ function MainPage({offers}: MainScreenProps): React.JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {offers.map((offer) => (
-                  <PlaceCard
-                    key={offer.id}
-                    {...offer}
-                  />))}
+                <PlaceCardList offers={offers}/>
               </div>
             </section>
             <div className="cities__right-section">
