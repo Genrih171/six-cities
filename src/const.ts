@@ -1,7 +1,3 @@
-const StartSettings = {
-  amountPlaces: 312,
-} as const;
-
 const AppRoutes = {
   ROOT: '/',
   LOGIN: '/login',
@@ -15,4 +11,4 @@ const AuthorizationStatus = {
   UNKNOWN: 'UNKNOWN',
 } as const;
 
-export {StartSettings, AuthorizationStatus, AppRoutes};
+export {AuthorizationStatus, AppRoutes};
