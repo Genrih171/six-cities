@@ -34,8 +34,10 @@ function App({offers}: AppScreenProps): React.JSX.Element {
             <Route
               path={AppRoutes.FAVORITES}
               element={
-                <PrivateRoute authorizationStatus={AuthorizationStatus.NO_AUTH}>
-                  <FavoritesPage/>
+                <PrivateRoute authorizationStatus={AuthorizationStatus.AUTH}>
+                  <FavoritesPage
+                    offers={offers}
+                  />
                 </PrivateRoute>
               }
             />

@@ -11,4 +11,11 @@ const AuthorizationStatus = {
   UNKNOWN: 'UNKNOWN',
 } as const;
 
-export {AuthorizationStatus, AppRoutes};
+const TypePage = {
+  MAIN: 'cities',
+  FAVORITES: 'favorites',
+} as const;
+
+const Cities = ['Paris', 'Cologne', 'Brussels', 'Amsterdam', 'Hamburg', 'Dusseldorf'] as const;
+
+export {AuthorizationStatus, AppRoutes, TypePage, Cities};
