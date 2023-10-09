@@ -1,8 +1,11 @@
 export type TOffer = {
   id: string;
   title: string;
+  description: string;
   type: string;
   price: number;
+  previewImage: string;
+  images: string[];
   city: {
     name: string;
     location: {
@@ -16,10 +19,17 @@ export type TOffer = {
     longitude: number;
     zoom: number;
     };
+  goods: string[];
+  host: {
+    isPro: boolean;
+    name: string;
+    avatarUrl: string;
+  };
   isFavorite: boolean;
   isPremium: boolean;
   rating: number;
-  previewImage: string;
+  bedrooms: number;
+  maxAdults: number;
 };
 
 export type TOffers = TOffer[];

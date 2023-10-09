@@ -26,7 +26,7 @@ function FavoritesPage({offers}: FavoritesPageProps): React.JSX.Element {
             <ul className="favorites__list">
 
               {Cities.map((city) => {
-                if (offers.some((offer) => offer.city.name === city)) {
+                if (offers.some((offer) => offer.isFavorite && offer.city.name === city)) {
                   return (
                     <li key={city} className="favorites__locations-items">
                       <div className="favorites__locations locations locations--current">

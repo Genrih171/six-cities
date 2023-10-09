@@ -28,9 +28,9 @@ function Header({withNavigation = true}: HeaderProps) {
                 </Link>
               </li>
               <li className="header__nav-item">
-                <a className="header__nav-link" href="#">
+                <Link to={AppRoutes.LOGIN} className="header__nav-link">
                   <span className="header__signout">Sign out</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav> }
