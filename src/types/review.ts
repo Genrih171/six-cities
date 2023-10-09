@@ -1,4 +1,4 @@
-export type TComment = {
+export type TReview = {
   id: string;
   date: string;
   user: {
@@ -10,9 +10,9 @@ export type TComment = {
   rating: number;
 };
 
-export type TCommentsToOffer = {
+export type TReviewsToOffer = {
   offerId: string;
-  comments: TComment[];
+  reviews: TReview[];
 };
 
-export type TComments = TCommentsToOffer[];
+export type TReviews = TReviewsToOffer[];

@@ -45,7 +45,7 @@ const Offers: TOffers = [
     ],
     host: {
       isPro: true,
-      name: 'Angelina',
+      name: 'Jane',
       avatarUrl: 'https://13.design.pages.academy/static/host/avatar-angelina.jpg'
     },
     isFavorite: true,
@@ -95,7 +95,7 @@ const Offers: TOffers = [
       'Fridge'
     ],
     host: {
-      isPro: true,
+      isPro: false,
       name: 'Angelina',
       avatarUrl: 'https://13.design.pages.academy/static/host/avatar-angelina.jpg'
     },
@@ -140,7 +140,7 @@ const Offers: TOffers = [
     ],
     host: {
       isPro: true,
-      name: 'Angelina',
+      name: 'Martha',
       avatarUrl: 'https://13.design.pages.academy/static/host/avatar-angelina.jpg'
     },
     isFavorite: true,
@@ -185,8 +185,8 @@ const Offers: TOffers = [
       'Washer'
     ],
     host: {
-      isPro: true,
-      name: 'Angelina',
+      isPro: false,
+      name: 'Olivia',
       avatarUrl: 'https://13.design.pages.academy/static/host/avatar-angelina.jpg'
     },
     isFavorite: false,

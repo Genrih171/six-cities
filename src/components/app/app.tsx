@@ -30,7 +30,12 @@ function App({offers}: AppScreenProps): React.JSX.Element {
             }
             />
             <Route path={AppRoutes.LOGIN} element={<LoginPage/>}/>
-            <Route path={`${AppRoutes.OFFER}/:offerId`} element={<OfferPage/>}/>
+            <Route path={`${AppRoutes.OFFER}/:offerId`} element={
+              <OfferPage
+                offers={offers}
+              />
+            }
+            />
             <Route
               path={AppRoutes.FAVORITES}
               element={

@@ -1,13 +1,13 @@
-import { TComments } from '../types/comment';
+import { TReviews } from '../types/review';
 
-const Reviews: TComments = [
+const Reviews: TReviews = [
   {
     offerId: 'b0889b31-5563-4811-8272-e0ac09aec10b',
-    comments: [],
+    reviews: [],
   },
   {
     offerId: '436c1f42-0f6d-4579-acf0-add5b8d427fa',
-    comments: [
+    reviews: [
       {
         id: 'cb5f310e-8278-487f-90f4-1d4232d62445',
         comment: 'We loved it so much, the house, the veiw, the location just great.. Highly reccomend :)',
@@ -34,7 +34,7 @@ const Reviews: TComments = [
   },
   {
     offerId: '9fa3f477-9e17-4eee-8f26-4b0e1eaabad4',
-    comments: [
+    reviews: [
       {
         id: '78854143-165c-487f-b26d-6452d6d5ffbd',
         comment: 'What an amazing view! The house is stunning and in an amazing location. The large glass wall had an amazing view of the river!',
@@ -50,7 +50,7 @@ const Reviews: TComments = [
   },
   {
     offerId: 'e1c8bcff-b30d-42c3-a5f6-e3c5ed1a049b',
-    comments: [
+    reviews: [
       {
         id: 'bad4b7b2-a0dd-4834-9ae9-085c20f0abd6',
         comment: 'The room was spacious and clean. The pool looked nothing like the photos and desparately needs a clean. The sauna and spa were closed for lunar new year holiday.',
