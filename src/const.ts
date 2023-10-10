@@ -18,4 +18,6 @@ const TypePage = {
 
 const Cities = ['Paris', 'Cologne', 'Brussels', 'Amsterdam', 'Hamburg', 'Dusseldorf'] as const;
 
-export {AuthorizationStatus, AppRoutes, TypePage, Cities};
+const Rating = [['5', 'perfect'], ['4', 'good'], ['3', 'not bad'], ['2', 'badly'], ['1', 'terribly']] as const;
+
+export {AuthorizationStatus, AppRoutes, TypePage, Cities, Rating};
