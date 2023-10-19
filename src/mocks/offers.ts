@@ -17,7 +17,7 @@ const Offers: TOffers = [
       'https://13.design.pages.academy/static/hotel/13.jpg'
     ],
     city: {
-      name: 'Paris',
+      name: 'Amsterdam',
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
@@ -70,7 +70,7 @@ const Offers: TOffers = [
       'https://13.design.pages.academy/static/hotel/13.jpg'
     ],
     city: {
-      name: 'Paris',
+      name: 'Amsterdam',
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
@@ -121,7 +121,7 @@ const Offers: TOffers = [
       'https://13.design.pages.academy/static/hotel/3.jpg'
     ],
     city: {
-      name: 'Paris',
+      name: 'Amsterdam',
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
@@ -165,7 +165,7 @@ const Offers: TOffers = [
       'https://13.design.pages.academy/static/hotel/11.jpg'
     ],
     city: {
-      name: 'Paris',
+      name: 'Amsterdam',
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
