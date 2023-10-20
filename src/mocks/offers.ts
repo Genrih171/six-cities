@@ -19,14 +19,14 @@ const Offers: TOffers = [
     city: {
       name: 'Amsterdam',
       location: {
-        latitude: 48.85661,
-        longitude: 2.351499,
+        latitude: 52.37454,
+        longitude: 4.897976,
         zoom: 13
       }
     },
     location: {
-      latitude: 48.868610000000004,
-      longitude: 2.342499,
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
       zoom: 16
     },
     goods: [
@@ -72,14 +72,14 @@ const Offers: TOffers = [
     city: {
       name: 'Amsterdam',
       location: {
-        latitude: 48.85661,
-        longitude: 2.351499,
+        latitude: 52.37454,
+        longitude: 4.897976,
         zoom: 13
       }
     },
     location: {
-      latitude: 48.858610000000006,
-      longitude: 2.330499,
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
       zoom: 16
     },
     goods: [
@@ -123,14 +123,14 @@ const Offers: TOffers = [
     city: {
       name: 'Amsterdam',
       location: {
-        latitude: 48.85661,
-        longitude: 2.351499,
+        latitude: 52.37454,
+        longitude: 4.897976,
         zoom: 13
       }
     },
     location: {
-      latitude: 48.834610000000005,
-      longitude: 2.335499,
+      latitude: 52.3609553943508,
+      longitude: 4.85309666406198,
       zoom: 16
     },
     goods: [
@@ -167,14 +167,14 @@ const Offers: TOffers = [
     city: {
       name: 'Amsterdam',
       location: {
-        latitude: 48.85661,
-        longitude: 2.351499,
+        latitude: 52.37454,
+        longitude: 4.897976,
         zoom: 13
       }
     },
     location: {
-      latitude: 48.85761,
-      longitude: 2.358499,
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
       zoom: 16
     },
     goods: [
