@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../../components/header/header';
 import LocationsList from '../../components/locations-list/locations-list';
 import PlaceCardList from '../../components/place-card-list/place-card-list';
+import Map from '../../components/map/map';
 
 import { Cities, TypeCard } from '../../const';
 import { TOffers } from '../../types/offer';
@@ -17,13 +18,11 @@ function MainPage({offers}: MainScreenProps): React.JSX.Element {
   const placesSort = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
-    const openPlacesOption = () => {
-      if (placesOption.current) {
-        placesOption.current.classList.toggle('places__options--opened');
-      }
-    };
-
     const placesSortButton = placesSort.current;
+
+    const openPlacesOption = () => {
+      placesOption.current?.classList.toggle('places__options--opened');
+    };
 
     placesSortButton?.addEventListener('click', openPlacesOption);
 
@@ -73,7 +72,10 @@ function MainPage({offers}: MainScreenProps): React.JSX.Element {
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map
+                city={offers[0].city}
+                places={offers.map((offer) => offer.location)}
+              />
             </div>
           </div>
         </div>
