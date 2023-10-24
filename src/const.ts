@@ -11,9 +11,14 @@ const AuthorizationStatus = {
   UNKNOWN: 'UNKNOWN',
 } as const;
 
-const TypeCard = {
+const TypePage = {
   MAIN: 'cities',
   OFFER: 'offer',
+} as const;
+
+const TypeCard = {
+  MAIN: 'cities',
+  NEAR_PLACES: 'near-places',
   FAVORITES: 'favorites',
 } as const;
 
@@ -45,4 +50,4 @@ const Rating = {
   '1': 'terribly'
 } as const;
 
-export {AuthorizationStatus, AppRoutes, TypeCard, ImgSize, Cities, Rating};
+export {AuthorizationStatus, AppRoutes, TypeCard, TypePage, ImgSize, Cities, Rating};

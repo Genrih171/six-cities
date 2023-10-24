@@ -6,7 +6,7 @@ import LocationsList from '../../components/locations-list/locations-list';
 import PlaceCardList from '../../components/place-card-list/place-card-list';
 import Map from '../../components/map/map';
 
-import { Cities, TypeCard } from '../../const';
+import { Cities, TypePage, TypeCard } from '../../const';
 import { TOffers } from '../../types/offer';
 
 type MainScreenProps = {
