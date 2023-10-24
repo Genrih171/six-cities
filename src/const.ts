@@ -14,6 +14,11 @@ const AuthorizationStatus = {
 const TypePage = {
   MAIN: 'cities',
   OFFER: 'offer',
+} as const;
+
+const TypeCard = {
+  MAIN: 'cities',
+  NEAR_PLACES: 'near-places',
   FAVORITES: 'favorites',
 } as const;
 
@@ -34,4 +39,4 @@ const Rating = {
   '1': 'terribly'
 } as const;
 
-export {AuthorizationStatus, AppRoutes, TypePage, Cities, Rating};
+export {AuthorizationStatus, AppRoutes, TypePage, TypeCard, Cities, Rating};

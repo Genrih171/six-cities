@@ -6,9 +6,10 @@ import { TOffers } from '../../types/offer';
 
 type PlaceCardListProps = {
   offers: TOffers;
+  typeCard: string;
 }
 
-function PlaceCardList({offers}: PlaceCardListProps) {
+function PlaceCardList({offers, typeCard}: PlaceCardListProps) {
   const [activeCard, setActiveCard] = useState({activeCardId: ''});
 
   const handleMouseOver = (offerId: string): void => {
@@ -24,6 +25,7 @@ function PlaceCardList({offers}: PlaceCardListProps) {
           key={offer.id}
           {...offer}
           handleMouseOver={handleMouseOver}
+          typeCard={typeCard}
         />))}
     </Fragment>
   );

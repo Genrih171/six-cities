@@ -6,7 +6,7 @@ import LocationsList from '../../components/locations-list/locations-list';
 import PlaceCardList from '../../components/place-card-list/place-card-list';
 import Map from '../../components/map/map';
 
-import { Cities, TypePage } from '../../const';
+import { Cities, TypePage, TypeCard } from '../../const';
 import { TOffers } from '../../types/offer';
 
 type MainScreenProps = {
@@ -65,7 +65,10 @@ function MainPage({offers}: MainScreenProps): React.JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCardList offers={offers}/>
+                <PlaceCardList
+                  offers={offers}
+                  typeCard={TypeCard.MAIN}
+                />
               </div>
             </section>
             <div className="cities__right-section">

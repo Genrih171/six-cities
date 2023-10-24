@@ -4,7 +4,7 @@ import Header from '../../components/header/header';
 
 import { TOffers } from '../../types/offer';
 import PlaceCard from '../../components/place-card/place-card';
-import { TypePage, Cities } from '../../const';
+import { TypeCard, Cities } from '../../const';
 
 type FavoritesPageProps = {
   offers: TOffers;
@@ -41,7 +41,7 @@ function FavoritesPage({offers}: FavoritesPageProps): React.JSX.Element {
                           <PlaceCard
                             key={offer.id}
                             {...offer}
-                            typePage={TypePage.FAVORITES}
+                            typeCard={TypeCard.FAVORITES}
                           />
                         ))}
                       </div>
