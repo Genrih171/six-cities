@@ -4,26 +4,25 @@ import 'leaflet/dist/leaflet.css';
 import { useRef, useEffect } from 'react';
 
 import useMap from '../../hooks/use-map';
+import { TypePage } from '../../const';
 
 type MapProps = {
-  city: {
-    name: string;
-    location: {
-      latitude: number;
-      longitude: number;
-      zoom: number;
-    };
+  mapAnchor: {
+    latitude: number;
+    longitude: number;
+    zoom: number;
   };
   places: {
     latitude: number;
     longitude: number;
     zoom: number;
-    }[];
+  }[];
+  typePage: string;
 }
 
-function Map({city, places}: MapProps) {
+function Map({mapAnchor, places, typePage}: MapProps) {
   const mapRef = useRef<HTMLElement | null>(null);
-  const map = useMap(mapRef, city.location);
+  const map = useMap(mapRef, mapAnchor);
 
   const defaultIcon = L.icon({
     iconUrl: 'img/pin.svg',
@@ -49,7 +48,7 @@ function Map({city, places}: MapProps) {
   }, [map, places, defaultIcon]);
 
   return (
-    <section ref={mapRef} className="cities__map map"></section>
+    <section ref={mapRef} className={`${typePage}__map map`} style={typePage === TypePage.OFFER ? {marginLeft: '20%', width: '60%'} : undefined} ></section>
   );
 }
 
