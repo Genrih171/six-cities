@@ -4,9 +4,12 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../../components/header/header';
 import ReviewsList from '../../components/reviews-list/reviews-list';
 import ReviewForm from '../../components/review-form/review-form';
+import Map from '../../components/map/map';
 
 import { TOffer, TOffers } from '../../types/offer';
 import { TReviews, TReviewsToOffer } from '../../types/review';
+
+import { TypePage } from '../../const';
 
 import { Reviews } from '../../mocks/reviews';
 
@@ -29,6 +32,7 @@ function OfferPage({offers, AllReviews = Reviews}: OfferPageProps): React.JSX.El
     goods,
     host,
     description,
+    location
   } = offers.find((offer) => offer.id === offerId) as TOffer;
 
   const {reviews} = AllReviews.find((el) => el.offerId === offerId) as TReviewsToOffer;
@@ -128,12 +132,16 @@ function OfferPage({offers, AllReviews = Reviews}: OfferPageProps): React.JSX.El
                 </div>
               </div>
               <section className="offer__reviews reviews">
-                {reviews.length && <ReviewsList reviews={reviews}/>}
+                {reviews.length ? <ReviewsList reviews={reviews}/> : ''}
                 <ReviewForm/>
               </section>
             </div>
           </div>
-          <section className="offer__map map"></section>
+          <Map
+            mapAnchor={location}
+            places={offers.map((offer) => offer.location)}
+            typePage={TypePage.OFFER}
+          />
         </section>
         <div className="container">
           <section className="near-places places">

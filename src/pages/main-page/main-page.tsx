@@ -6,7 +6,7 @@ import LocationsList from '../../components/locations-list/locations-list';
 import PlaceCardList from '../../components/place-card-list/place-card-list';
 import Map from '../../components/map/map';
 
-import { Cities } from '../../const';
+import { Cities, TypePage } from '../../const';
 import { TOffers } from '../../types/offer';
 
 type MainScreenProps = {
@@ -70,8 +70,9 @@ function MainPage({offers}: MainScreenProps): React.JSX.Element {
             </section>
             <div className="cities__right-section">
               <Map
-                city={offers[0].city}
+                mapAnchor={offers[0].city.location}
                 places={offers.map((offer) => offer.location)}
+                typePage={TypePage.MAIN}
               />
             </div>
           </div>

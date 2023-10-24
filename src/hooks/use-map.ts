@@ -1,13 +1,13 @@
 import {useEffect, useState, useRef} from 'react';
 import L from 'leaflet';
 
-type City = {
+type MapAnchor = {
   latitude: number;
   longitude: number;
   zoom: number;
 }
 
-function useMap(mapRef: React.MutableRefObject<HTMLElement | null>, city: City) {
+function useMap(mapRef: React.MutableRefObject<HTMLElement | null>, mapAnchor: MapAnchor) {
   const [map, setMap] = useState<null | L.Map>(null);
   const isRenderedRef = useRef(false);
 
@@ -15,10 +15,10 @@ function useMap(mapRef: React.MutableRefObject<HTMLElement | null>, city: City) 
     if (mapRef.current !== null && !isRenderedRef.current) {
       const instance = L.map(mapRef.current, {
         center: {
-          lat: city.latitude,
-          lng: city.longitude,
+          lat: mapAnchor.latitude,
+          lng: mapAnchor.longitude,
         },
-        zoom: city.zoom,
+        zoom: mapAnchor.zoom,
       });
 
       L.tileLayer(
@@ -31,7 +31,7 @@ function useMap(mapRef: React.MutableRefObject<HTMLElement | null>, city: City) 
       setMap(instance);
       isRenderedRef.current = true;
     }
-  }, [mapRef, city]);
+  }, [mapRef, mapAnchor]);
 
   return map;
 }

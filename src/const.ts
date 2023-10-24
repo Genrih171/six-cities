@@ -13,6 +13,7 @@ const AuthorizationStatus = {
 
 const TypePage = {
   MAIN: 'cities',
+  OFFER: 'offer',
   FAVORITES: 'favorites',
 } as const;
 
