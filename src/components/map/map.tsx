@@ -20,32 +20,38 @@ type MapProps = {
   typePage: string;
 }
 
+const defaultIcon = L.icon({
+  iconUrl: 'img/pin.svg',
+  iconAnchor: [13, 39],
+});
+
+// const currentIcon = L.icon({
+//   iconUrl: 'img/pin-active.svg',
+//   iconAnchor: [13, 39],
+// });
+
 function Map({mapAnchor, places, typePage}: MapProps) {
   const mapRef = useRef<HTMLElement | null>(null);
   const map = useMap(mapRef, mapAnchor);
 
-  const defaultIcon = L.icon({
-    iconUrl: 'img/pin.svg',
-    iconAnchor: [13, 39],
-  });
-
-  // const currentIcon = L.icon({
-  //   iconUrl: 'img/pin-active.svg',
-  //   iconAnchor: [13, 39],
-  // });
-
   useEffect(() => {
     if (map) {
+      const markerLayer = L.layerGroup().addTo(map);
+
       places.forEach((place) => {
         L.marker({
           lat: place.latitude,
           lng: place.longitude
         }, {
           icon: defaultIcon
-        }).addTo(map);
+        }).addTo(markerLayer);
       });
+
+      return () => {
+        map.removeLayer(markerLayer);
+      };
     }
-  }, [map, places, defaultIcon]);
+  }, [map, places]);
 
   return (
     <section ref={mapRef} className={`${typePage}__map map`} style={typePage === TypePage.OFFER ? {marginLeft: '20%', width: '60%'} : undefined} ></section>
