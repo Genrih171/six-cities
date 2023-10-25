@@ -1,12 +1,16 @@
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
+import Page404 from '../page-404/page-404';
+
 import Header from '../../components/header/header';
 import ReviewsList from '../../components/reviews-list/reviews-list';
 import ReviewForm from '../../components/review-form/review-form';
 
-import { TOffer, TOffers } from '../../types/offer';
-import { TReviews, TReviewsToOffer } from '../../types/review';
+import { TOffers } from '../../types/offer';
+import { TReviews } from '../../types/review';
+
+import { setUppercaseLetter } from '../../utils';
 
 import { Reviews } from '../../mocks/reviews';
 
@@ -16,7 +20,13 @@ type OfferPageProps = {
 }
 
 function OfferPage({offers, AllReviews = Reviews}: OfferPageProps): React.JSX.Element {
-  const offerId = useParams().offerId;
+  const {offerId} = useParams();
+  const offer = offers.find((el) => el.id === offerId);
+
+  if (!offer) {
+    return <Page404/>;
+  }
+
   const {
     images,
     isPremium,
@@ -29,9 +39,9 @@ function OfferPage({offers, AllReviews = Reviews}: OfferPageProps): React.JSX.El
     goods,
     host,
     description,
-  } = offers.find((offer) => offer.id === offerId) as TOffer;
+  } = offer;
 
-  const {reviews} = AllReviews.find((el) => el.offerId === offerId) as TReviewsToOffer;
+  const offerReviews = AllReviews.find((el) => el.offerId === offerId);
 
   return (
     <div className="page">
@@ -82,7 +92,7 @@ function OfferPage({offers, AllReviews = Reviews}: OfferPageProps): React.JSX.El
               </div>
               <ul className="offer__features">
                 <li className="offer__feature offer__feature--entire">
-                  {type.toUpperCase()[0] + type.slice(1)}
+                  {setUppercaseLetter(type)}
                 </li>
                 <li className="offer__feature offer__feature--bedrooms">
                   {bedrooms} Bedrooms
@@ -128,7 +138,7 @@ function OfferPage({offers, AllReviews = Reviews}: OfferPageProps): React.JSX.El
                 </div>
               </div>
               <section className="offer__reviews reviews">
-                {reviews.length && <ReviewsList reviews={reviews}/>}
+                {offerReviews && offerReviews.reviews.length ? <ReviewsList reviews={offerReviews.reviews}/> : ''}
                 <ReviewForm/>
               </section>
             </div>

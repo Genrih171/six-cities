@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import { AppRoutes, TypePage } from '../../const';
+import { AppRoutes, TypeCard, ImgSize } from '../../const';
+import { setUppercaseLetter } from '../../utils';
 
 type PlaceCardProps = {
   id: string;
@@ -11,29 +12,40 @@ type PlaceCardProps = {
   isFavorite: boolean;
   isPremium: boolean;
   handleMouseOver?: (offerId: string) => void;
-  typePage?: string;
+  typeCard: string;
 }
 
 function PlaceCard(props: PlaceCardProps): React.JSX.Element {
-  const {id, title, type, price, previewImage, isPremium, isFavorite, handleMouseOver,typePage = TypePage.MAIN} = props;
+  const {id, title, type, price, previewImage, isPremium, isFavorite, handleMouseOver, typeCard} = props;
+
+  let imgSize;
+
+  switch (typeCard) {
+    case TypeCard.MAIN:
+      imgSize = ImgSize.MAIN;
+      break;
+    case TypeCard.FAVORITES:
+      imgSize = ImgSize.FAVORITES;
+      break;
+  }
 
   return (
-    <article className={`${typePage}__card place-card`} onMouseOver={handleMouseOver ? () => handleMouseOver(id) : undefined}>
+    <article className={`${typeCard}__card place-card`} onMouseOver={handleMouseOver ? () => handleMouseOver(id) : undefined}>
 
       {isPremium &&
       <div className="place-card__mark">
         <span>Premium</span>
       </div>}
 
-      <div className={`${typePage}__image-wrapper place-card__image-wrapper`}>
+      <div className={`${typeCard}__image-wrapper place-card__image-wrapper`}>
         <Link to={`${AppRoutes.OFFER}/${id}`}>
           <img className="place-card__image" src={previewImage}
-            width={typePage === TypePage.FAVORITES ? '150' : '260'}
-            height={typePage === TypePage.FAVORITES ? '200' : '110'} alt="Place image"
+            width={imgSize?.width}
+            height={imgSize?.height} alt="Place image"
           />
         </Link>
       </div>
-      <div className={`${typePage === TypePage.FAVORITES ? 'favorites__card-info' : ''} place-card__info`}>
+      <div className={`${typeCard === TypeCard.FAVORITES ? 'favorites__card-info' : ''} place-card__info`}>
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">&euro;{price}</b>
@@ -55,7 +67,7 @@ function PlaceCard(props: PlaceCardProps): React.JSX.Element {
         <h2 className="place-card__name">
           <Link to={`${AppRoutes.OFFER}/${id}`}>{title}</Link>
         </h2>
-        <p className="place-card__type">{type[0].toUpperCase() + type.slice(1)}</p>
+        <p className="place-card__type">{setUppercaseLetter(type)}</p>
       </div>
     </article>
   );

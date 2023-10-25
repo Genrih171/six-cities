@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../../components/header/header';
 import PlaceCardList from '../../components/place-card-list/place-card-list';
 
+import { TypeCard } from '../../const';
+
 import { TOffers } from '../../types/offer';
 
 type MainScreenProps = {
@@ -77,7 +79,10 @@ function MainPage({offers}: MainScreenProps): React.JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCardList offers={offers}/>
+                <PlaceCardList
+                  offers={offers}
+                  typeCard={TypeCard.MAIN}
+                />
               </div>
             </section>
             <div className="cities__right-section">

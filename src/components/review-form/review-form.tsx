@@ -19,7 +19,7 @@ function ReviewForm() {
     <form className="reviews__form form" action="#" method="post">
       <label className="reviews__label form__label" htmlFor="review">Your review</label>
       <div className="reviews__rating-form form__rating">
-        {Rating.map(([value, title]) => (
+        {Object.entries(Rating).reverse().map(([value, title]) => (
           <Fragment key={value}>
             <input className="form__rating-input visually-hidden" name="rating" value={value} id={`${value}-stars`} type="radio" onChange={changeRatingHandler}/>
             <label htmlFor={`${value}-stars`} className="reviews__rating-label form__rating-label" title={title}>

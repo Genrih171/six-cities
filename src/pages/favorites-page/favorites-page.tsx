@@ -4,7 +4,7 @@ import Header from '../../components/header/header';
 
 import { TOffers } from '../../types/offer';
 import PlaceCard from '../../components/place-card/place-card';
-import { TypePage, Cities } from '../../const';
+import { TypeCard, Cities } from '../../const';
 
 type FavoritesPageProps = {
   offers: TOffers;
@@ -25,7 +25,7 @@ function FavoritesPage({offers}: FavoritesPageProps): React.JSX.Element {
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
 
-              {Cities.map((city) => {
+              {Object.values(Cities).map((city) => {
                 if (offers.some((offer) => offer.isFavorite && offer.city.name === city)) {
                   return (
                     <li key={city} className="favorites__locations-items">
@@ -41,7 +41,7 @@ function FavoritesPage({offers}: FavoritesPageProps): React.JSX.Element {
                           <PlaceCard
                             key={offer.id}
                             {...offer}
-                            typePage={TypePage.FAVORITES}
+                            typeCard={TypeCard.FAVORITES}
                           />
                         ))}
                       </div>
