@@ -16,7 +16,7 @@ function Header({withNavigation = true}: HeaderProps) {
             </Link>
           </div>
 
-          { withNavigation &&
+          {withNavigation &&
           <nav className="header__nav">
             <ul className="header__nav-list">
               <li className="header__nav-item user">
@@ -33,7 +33,7 @@ function Header({withNavigation = true}: HeaderProps) {
                 </Link>
               </li>
             </ul>
-          </nav> }
+          </nav>}
 
         </div>
       </div>
