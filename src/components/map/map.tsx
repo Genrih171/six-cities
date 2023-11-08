@@ -54,7 +54,17 @@ function Map({mapAnchor, places, typePage}: MapProps) {
   }, [map, places]);
 
   return (
-    <section ref={mapRef} className={`${typePage}__map map`} style={typePage === TypePage.OFFER ? {marginLeft: '20%', width: '60%'} : undefined} ></section>
+    <section
+      ref={mapRef}
+      className={`${typePage}__map map`}
+      style={{
+        height: '100%',
+        minHeight: '500px',
+        width: '100%',
+        maxWidth: '1144px',
+        margin: '0 auto',
+      }}
+    />
   );
 }
 

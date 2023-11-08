@@ -157,7 +157,7 @@ function OfferPage({offers, AllReviews = Reviews}: OfferPageProps): React.JSX.El
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
             <div className="near-places__list places__list">
               <PlaceCardList
-                offers={offers.filter((offer) => offer.id !== offerId)}
+                offers={offers.filter((el) => el.id !== offerId)}
                 typeCard={TypeCard.NEAR_PLACES}
               />
             </div>

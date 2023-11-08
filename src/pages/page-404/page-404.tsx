@@ -6,9 +6,11 @@ import styles from './page-404.module.css';
 function Page404(): React.JSX.Element {
   return (
     <React.Fragment>
-      <div className={styles.title}>404. Page not found.
+      <div className={styles.title}>
+        404. Page not found.
       </div>
-      <div className={styles.link}><Link to={'/'}>Return to main</Link>
+      <div className={styles.link}>
+        <Link to={'/'}>Return to main</Link>
       </div>
     </React.Fragment>
   );
