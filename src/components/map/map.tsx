@@ -4,7 +4,6 @@ import 'leaflet/dist/leaflet.css';
 import { useRef, useEffect } from 'react';
 
 import useMap from '../../hooks/use-map';
-import { TypePage } from '../../const';
 
 type MapProps = {
   mapAnchor: {
