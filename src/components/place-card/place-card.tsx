@@ -15,9 +15,7 @@ type PlaceCardProps = {
   typeCard: string;
 }
 
-function PlaceCard(props: PlaceCardProps): React.JSX.Element {
-  const {id, title, type, price, previewImage, isPremium, isFavorite, handleMouseOver, typeCard} = props;
-
+function PlaceCard({id, title, type, price, previewImage, isPremium, isFavorite, handleMouseOver, typeCard}: PlaceCardProps): React.JSX.Element {
   let imgSize;
 
   switch (typeCard) {

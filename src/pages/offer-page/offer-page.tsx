@@ -1,7 +1,5 @@
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-
-import Page404 from '../page-404/page-404';
 
 import Header from '../../components/header/header';
 import ReviewsList from '../../components/reviews-list/reviews-list';
@@ -24,7 +22,7 @@ function OfferPage({offers, AllReviews = Reviews}: OfferPageProps): React.JSX.El
   const offer = offers.find((el) => el.id === offerId);
 
   if (!offer) {
-    return <Page404/>;
+    return <Navigate to='*'/>;
   }
 
   const {
