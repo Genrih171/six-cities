@@ -11,25 +11,38 @@ import Page404 from '../../pages/page-404/page-404';
 import PrivateRoute from '../private-route/private-route';
 
 import { AppRoutes, AuthorizationStatus } from '../../const';
+import { TOffers } from '../../types/offer';
 
 type AppScreenProps = {
-  amountPlaces: number;
+  offers: TOffers;
 };
 
-function App({amountPlaces}: AppScreenProps): React.JSX.Element {
+function App({offers}: AppScreenProps): React.JSX.Element {
   return (
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route path={AppRoutes.ROOT}>
-            <Route index element={<MainPage amountPlaces={amountPlaces}/>}/>
+            <Route index element={
+              <MainPage
+                offers={offers}
+              />
+            }
+            />
             <Route path={AppRoutes.LOGIN} element={<LoginPage/>}/>
-            <Route path={`${AppRoutes.OFFER}/:offerId`} element={<OfferPage/>}/>
+            <Route path={`${AppRoutes.OFFER}/:offerId`} element={
+              <OfferPage
+                offers={offers}
+              />
+            }
+            />
             <Route
               path={AppRoutes.FAVORITES}
               element={
-                <PrivateRoute authorizationStatus={AuthorizationStatus.NO_AUTH}>
-                  <FavoritesPage/>
+                <PrivateRoute authorizationStatus={AuthorizationStatus.AUTH}>
+                  <FavoritesPage
+                    offers={offers}
+                  />
                 </PrivateRoute>
               }
             />
